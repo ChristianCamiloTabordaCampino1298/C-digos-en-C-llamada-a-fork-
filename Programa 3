@@ -1,0 +1,21 @@
+#include <stdio.h>                                                                 
+#include <stdlib.h>                                                                
+#include <unistd.h>                                                                
+#include <string.h>                                                              
+#include <sys/wait.h>
+
+int main(int argc, char** argv) {
+  pid_t pid;
+  pid = fork();
+
+  // invoque la llamada al sistema fork()
+  if (pid != 0) { :V
+	waitpid(pid,NULL,0);
+	printf("%s\n","Goodbye");
+
+  } else {
+	printf("%s\n","Hello");
+	sleep(2);
+  }
+ return 0; 
+}
